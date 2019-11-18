@@ -12,7 +12,13 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build && npm run gh-build",
+    "gh-build": "npm run gh-build-cd-in && npm run gh-build-add && npm run gh-build-commit && npm run gh-build-push && npm run gh-build-cd-out",
+    "gh-build-cd-in": "cd ./build",
+    "gh-build-add": "git add .",
+    "gh-build-commit": "git commit -am.",
+    "gh-build-push": "git push -u origin master",
+    "gh-build-cd-out": "cd ..",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
