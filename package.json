@@ -13,7 +13,7 @@
     "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build && npm run gh-build",
-    "gh-build": "npm run gh-build-cd-in && npm run gh-build-add && npm run gh-build-commit && npm run gh-build-push && npm run gh-build-cd-out",
+    "gh-build": "cd ./build && git add . && git commit -am. && git push -u origin master",
     "gh-build-cd-in": "cd ./build",
     "gh-build-add": "git add .",
     "gh-build-commit": "git commit -am.",
